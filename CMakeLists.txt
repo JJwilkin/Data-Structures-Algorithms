@@ -7,7 +7,6 @@ include_directories(.)
 
 add_executable(Assignment3
         main.cpp
-        lab3_main.cpp
         lab3_binary_search_tree.cpp
         lab3_binary_search_tree.hpp
         lab3_priority_queue.cpp
