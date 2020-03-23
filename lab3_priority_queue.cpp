@@ -93,7 +93,7 @@ bool PriorityQueue::dequeue() {
 		heap[1] = heap[i];
 		heap[i] = temp;
 		delete heap[i];
-		heap[i] = NULL;
+		heap[i] = nullptr;
 		int j = 1;
 		while (j < size && (heap[j] -> priority < heap[2*j] -> priority || heap[j] -> priority < heap[2*j +1] -> priority)) {
 			TaskItem * swap = heap[j];
