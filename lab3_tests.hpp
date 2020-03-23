@@ -30,6 +30,9 @@ public:
         ASSERT_TRUE( !r.full() );
         ASSERT_TRUE( r.get_size() == 1 );
         r.dequeue();
+        ASSERT_TRUE( r.empty() );
+        ASSERT_TRUE( !r.full() );
+        ASSERT_TRUE( r.get_size() == 0 );
         return true;
 	}
 
