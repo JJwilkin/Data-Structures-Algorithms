@@ -41,7 +41,20 @@ PriorityQueue::TaskItem PriorityQueue::max() const {
 // returns true if successful and false otherwise
 // priority queue does not change in capacity
 bool PriorityQueue::enqueue( TaskItem val ) {
-	return false;
+	if (size == capacity) return false;
+	if (size == 0) heap[1] = new TaskItem(val);
+	else {
+		int i = size + 1;
+		heap[i] = new TaskItem(val);
+		while (i > 1 && heap[i/2] -> priority < heap[i] -> priority) { //start at bottom right of heap, traverse up, swapping parents with children if children > parent
+			TaskItem * temp = heap[i];
+			heap[i] = heap[i/2];
+			heap[i/2] = temp;
+			i /=2;
+		}
+	}
+	size++;
+	return true;
 }
 
 // PURPOSE: Removes the top element with the maximum priority
@@ -49,5 +62,29 @@ bool PriorityQueue::enqueue( TaskItem val ) {
 // returns true if successful and false otherwise
 // priority queue does not change in capacity
 bool PriorityQueue::dequeue() {
-	return false;
+	if (size == 0) return false;
+	else {
+		int i = size;
+		TaskItem * temp = heap[1]; //store first element
+		heap[1] = heap[i];
+		heap[i] = temp;
+		delete heap[i];
+		heap[i] = NULL;
+		int j = 1;
+		while (j < size && (heap[j] -> priority < heap[2*j] -> priority || heap[j] -> priority < heap[2*j +1] -> priority)) {
+			TaskItem * swap = heap[j];
+			if (heap[2*j] -> priority > heap[2*j + 1] -> priority) { //if left node > right node swap left nope
+				
+				heap[j] = heap[2*j];
+				heap [2*j] = swap;
+			}
+			else {
+				heap[j] = heap[2*j +1];
+				heap [2*j +1] = swap;
+			}
+		}
+	}
+
+	size--;
+	return true;
 }
