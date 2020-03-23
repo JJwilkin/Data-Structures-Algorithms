@@ -71,11 +71,12 @@ bool PriorityQueue::enqueue( TaskItem val ) {
 	else {
 		int i = size + 1;
 		heap[i] = new TaskItem(val);
-		while (i > 1 && heap[i/2] -> priority < heap[i] -> priority) { //start at bottom right of heap, traverse up, swapping parents with children if children > parent
+        // Start at bottom right of heap, traverse up, swapping parents with children if children > parent
+		while (i > 1 && heap[i/2]->priority < heap[i]->priority) {
 			TaskItem * temp = heap[i];
 			heap[i] = heap[i/2];
 			heap[i/2] = temp;
-			i /=2;
+			i /= 2;
 		}
 	}
 	size++;
@@ -90,7 +91,7 @@ bool PriorityQueue::dequeue() {
 	if (size == 0) return false;
 	else {
 		int i = size;
-		TaskItem * temp = heap[1]; //store first element
+		TaskItem * temp = heap[1]; // Store first element
 		heap[1] = heap[i];
 		heap[i] = temp;
 		delete heap[i];
@@ -109,7 +110,6 @@ bool PriorityQueue::dequeue() {
 			}
 		}
 	}
-
 	size--;
 	return true;
 }

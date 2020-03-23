@@ -70,22 +70,9 @@ CMakeFiles/Assignment3.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Assignment3.dir/main.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hooman/Documents/GitHub/Data-Structures-Algorithms/main.cpp -o CMakeFiles/Assignment3.dir/main.cpp.s
 
-CMakeFiles/Assignment3.dir/lab3_main.cpp.o: CMakeFiles/Assignment3.dir/flags.make
-CMakeFiles/Assignment3.dir/lab3_main.cpp.o: ../lab3_main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Assignment3.dir/lab3_main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment3.dir/lab3_main.cpp.o -c /Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_main.cpp
-
-CMakeFiles/Assignment3.dir/lab3_main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Assignment3.dir/lab3_main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_main.cpp > CMakeFiles/Assignment3.dir/lab3_main.cpp.i
-
-CMakeFiles/Assignment3.dir/lab3_main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Assignment3.dir/lab3_main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_main.cpp -o CMakeFiles/Assignment3.dir/lab3_main.cpp.s
-
 CMakeFiles/Assignment3.dir/lab3_binary_search_tree.cpp.o: CMakeFiles/Assignment3.dir/flags.make
 CMakeFiles/Assignment3.dir/lab3_binary_search_tree.cpp.o: ../lab3_binary_search_tree.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Assignment3.dir/lab3_binary_search_tree.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Assignment3.dir/lab3_binary_search_tree.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment3.dir/lab3_binary_search_tree.cpp.o -c /Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_binary_search_tree.cpp
 
 CMakeFiles/Assignment3.dir/lab3_binary_search_tree.cpp.i: cmake_force
@@ -98,7 +85,7 @@ CMakeFiles/Assignment3.dir/lab3_binary_search_tree.cpp.s: cmake_force
 
 CMakeFiles/Assignment3.dir/lab3_priority_queue.cpp.o: CMakeFiles/Assignment3.dir/flags.make
 CMakeFiles/Assignment3.dir/lab3_priority_queue.cpp.o: ../lab3_priority_queue.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Assignment3.dir/lab3_priority_queue.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Assignment3.dir/lab3_priority_queue.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment3.dir/lab3_priority_queue.cpp.o -c /Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_priority_queue.cpp
 
 CMakeFiles/Assignment3.dir/lab3_priority_queue.cpp.i: cmake_force
@@ -112,7 +99,6 @@ CMakeFiles/Assignment3.dir/lab3_priority_queue.cpp.s: cmake_force
 # Object files for target Assignment3
 Assignment3_OBJECTS = \
 "CMakeFiles/Assignment3.dir/main.cpp.o" \
-"CMakeFiles/Assignment3.dir/lab3_main.cpp.o" \
 "CMakeFiles/Assignment3.dir/lab3_binary_search_tree.cpp.o" \
 "CMakeFiles/Assignment3.dir/lab3_priority_queue.cpp.o"
 
@@ -120,12 +106,11 @@ Assignment3_OBJECTS = \
 Assignment3_EXTERNAL_OBJECTS =
 
 Assignment3: CMakeFiles/Assignment3.dir/main.cpp.o
-Assignment3: CMakeFiles/Assignment3.dir/lab3_main.cpp.o
 Assignment3: CMakeFiles/Assignment3.dir/lab3_binary_search_tree.cpp.o
 Assignment3: CMakeFiles/Assignment3.dir/lab3_priority_queue.cpp.o
 Assignment3: CMakeFiles/Assignment3.dir/build.make
 Assignment3: CMakeFiles/Assignment3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Assignment3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Assignment3"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Assignment3.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

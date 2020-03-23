@@ -86,9 +86,6 @@
 		<Unit filename="/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_binary_search_tree.hpp">
 			<Option target="Assignment3"/>
 		</Unit>
-		<Unit filename="/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_main.cpp">
-			<Option target="Assignment3"/>
-		</Unit>
 		<Unit filename="/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_priority_queue.cpp">
 			<Option target="Assignment3"/>
 		</Unit>

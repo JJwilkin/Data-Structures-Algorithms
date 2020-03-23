@@ -4,8 +4,6 @@
 CMakeFiles/Assignment3.dir/lab3_binary_search_tree.cpp.o: ../lab3_binary_search_tree.cpp
 CMakeFiles/Assignment3.dir/lab3_binary_search_tree.cpp.o: ../lab3_binary_search_tree.hpp
 
-CMakeFiles/Assignment3.dir/lab3_main.cpp.o: ../lab3_main.cpp
-
 CMakeFiles/Assignment3.dir/lab3_priority_queue.cpp.o: ../lab3_priority_queue.cpp
 CMakeFiles/Assignment3.dir/lab3_priority_queue.cpp.o: ../lab3_priority_queue.hpp
 

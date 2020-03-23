@@ -24,7 +24,13 @@ public:
 
 	// PURPOSE: Tests enqueue of one item and then dequeue of that item
 	bool test2() {
-		return false;
+        PriorityQueue q(5);
+        q.enqueue(PriorityQueue::TaskItem(2, "NULL"));
+        ASSERT_TRUE( !q.empty() );
+        ASSERT_TRUE( !q.full() );
+        ASSERT_TRUE( q.get_size() == 1 );
+        q.dequeue();
+        return true;
 	}
 
 	// PURPOSE: Tests enqueue too many

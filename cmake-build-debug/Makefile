@@ -150,33 +150,6 @@ lab3_binary_search_tree.cpp.s:
 	$(MAKE) -f CMakeFiles/Assignment3.dir/build.make CMakeFiles/Assignment3.dir/lab3_binary_search_tree.cpp.s
 .PHONY : lab3_binary_search_tree.cpp.s
 
-lab3_main.o: lab3_main.cpp.o
-
-.PHONY : lab3_main.o
-
-# target to build an object file
-lab3_main.cpp.o:
-	$(MAKE) -f CMakeFiles/Assignment3.dir/build.make CMakeFiles/Assignment3.dir/lab3_main.cpp.o
-.PHONY : lab3_main.cpp.o
-
-lab3_main.i: lab3_main.cpp.i
-
-.PHONY : lab3_main.i
-
-# target to preprocess a source file
-lab3_main.cpp.i:
-	$(MAKE) -f CMakeFiles/Assignment3.dir/build.make CMakeFiles/Assignment3.dir/lab3_main.cpp.i
-.PHONY : lab3_main.cpp.i
-
-lab3_main.s: lab3_main.cpp.s
-
-.PHONY : lab3_main.s
-
-# target to generate assembly for a file
-lab3_main.cpp.s:
-	$(MAKE) -f CMakeFiles/Assignment3.dir/build.make CMakeFiles/Assignment3.dir/lab3_main.cpp.s
-.PHONY : lab3_main.cpp.s
-
 lab3_priority_queue.o: lab3_priority_queue.cpp.o
 
 .PHONY : lab3_priority_queue.o
@@ -243,9 +216,6 @@ help:
 	@echo "... lab3_binary_search_tree.o"
 	@echo "... lab3_binary_search_tree.i"
 	@echo "... lab3_binary_search_tree.s"
-	@echo "... lab3_main.o"
-	@echo "... lab3_main.i"
-	@echo "... lab3_main.s"
 	@echo "... lab3_priority_queue.o"
 	@echo "... lab3_priority_queue.i"
 	@echo "... lab3_priority_queue.s"

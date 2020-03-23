@@ -2,7 +2,6 @@ file(REMOVE_RECURSE
   "Assignment3"
   "Assignment3.pdb"
   "CMakeFiles/Assignment3.dir/lab3_binary_search_tree.cpp.o"
-  "CMakeFiles/Assignment3.dir/lab3_main.cpp.o"
   "CMakeFiles/Assignment3.dir/lab3_priority_queue.cpp.o"
   "CMakeFiles/Assignment3.dir/main.cpp.o"
 )
