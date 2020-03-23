@@ -24,23 +24,34 @@ public:
 
 	// PURPOSE: Tests enqueue of one item and then dequeue of that item
 	bool test2() {
-        PriorityQueue q(5);
-        q.enqueue(PriorityQueue::TaskItem(2, "NULL"));
-        ASSERT_TRUE( !q.empty() );
-        ASSERT_TRUE( !q.full() );
-        ASSERT_TRUE( q.get_size() == 1 );
-        q.dequeue();
+        PriorityQueue r(5);
+        r.enqueue(PriorityQueue::TaskItem(2, "NULL"));
+        ASSERT_TRUE( !r.empty() );
+        ASSERT_TRUE( !r.full() );
+        ASSERT_TRUE( r.get_size() == 1 );
+        r.dequeue();
         return true;
 	}
 
 	// PURPOSE: Tests enqueue too many
 	bool test3() {
-		return false;
+        PriorityQueue s(2);
+        s.enqueue(PriorityQueue::TaskItem(2, "NULL"));
+        s.enqueue(PriorityQueue::TaskItem(3, "NULL"));
+        ASSERT_FALSE(s.enqueue(PriorityQueue::TaskItem(4, "NULL")));
+        return true;
 	}
   
 	// PURPOSE: Tests enqueue too many then dequeue too many
 	bool test4() {
-		return false;
+        PriorityQueue a(2);
+        a.enqueue(PriorityQueue::TaskItem(2, "NULL"));
+        a.enqueue(PriorityQueue::TaskItem(3, "NULL"));
+        ASSERT_FALSE(a.enqueue(PriorityQueue::TaskItem(4, "NULL")));
+        a.dequeue();
+        a.dequeue();
+        ASSERT_FALSE(a.dequeue());
+        return true;
 	}
 };
 

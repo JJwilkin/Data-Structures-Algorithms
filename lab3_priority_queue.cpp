@@ -1,12 +1,12 @@
 #include "lab3_priority_queue.hpp"
-#include <iostream>;
+#include <iostream>
 
 using namespace std;
 
 // PURPOSE: Parametric constructor 
 // initializes heap to an array of (n_capacity + 1) elements
 PriorityQueue::PriorityQueue(unsigned int n_capacity) {
-    TaskItem** heap = new TaskItem *[n_capacity + 1];
+    heap = new TaskItem *[n_capacity +1];
     capacity = n_capacity;
     size = 0;
 }
@@ -14,8 +14,10 @@ PriorityQueue::PriorityQueue(unsigned int n_capacity) {
 // PURPOSE: Explicit destructor of the class PriorityQueue
 PriorityQueue::~PriorityQueue() {
     for (int i = 0; i < size; i++) {
-        delete heap[i];
-        heap[i] = nullptr;
+        if (heap[i]) {
+            delete heap[i];
+            heap[i] = nullptr;
+        }
     }
 }
 
@@ -67,11 +69,12 @@ PriorityQueue::TaskItem PriorityQueue::max() const {
 // priority queue does not change in capacity
 bool PriorityQueue::enqueue( TaskItem val ) {
 	if (size == capacity) return false;
-	if (size == 0) heap[1] = new TaskItem(val);
+
+	if (size == 0) heap[1] =  new TaskItem(val.priority, val.description);
 	else {
 		int i = size + 1;
-		heap[i] = new TaskItem(val);
-        // Start at bottom right of heap, traverse up, swapping parents with children if children > parent
+        heap[i] = new TaskItem(val.priority, val.description);
+        // Strt at bottom right of heap, traverse up, swapping parents with children if children > parent
 		while (i > 1 && heap[i/2]->priority < heap[i]->priority) {
 			TaskItem * temp = heap[i];
 			heap[i] = heap[i/2];
@@ -94,10 +97,10 @@ bool PriorityQueue::dequeue() {
 		TaskItem * temp = heap[1]; // Store first element
 		heap[1] = heap[i];
 		heap[i] = temp;
-		delete heap[i];
-		heap[i] = nullptr;
+		//delete heap[i];
+		//heap[i] = nullptr;
 		int j = 1;
-		while (j < size && (heap[j] -> priority < heap[2*j] -> priority || heap[j] -> priority < heap[2*j +1] -> priority)) {
+		while (j < size && (2*j+1) < size && (heap[j] -> priority < heap[2*j] -> priority || heap[j] -> priority < heap[2*j +1] -> priority)) {
 			TaskItem * swap = heap[j];
 			if (heap[2*j] -> priority > heap[2*j + 1] -> priority) { //if left node > right node swap left nope
 				

@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_binary_search_tree.cpp" "/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/cmake-build-debug/CMakeFiles/Assignment3.dir/lab3_binary_search_tree.cpp.o"
-  "/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_priority_queue.cpp" "/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/cmake-build-debug/CMakeFiles/Assignment3.dir/lab3_priority_queue.cpp.o"
-  "/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/main.cpp" "/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/cmake-build-debug/CMakeFiles/Assignment3.dir/main.cpp.o"
+  "/Users/joshuawilkinson/Desktop/Data-Structures-Algorithms/lab3_binary_search_tree.cpp" "/Users/joshuawilkinson/Desktop/Data-Structures-Algorithms/cmake-build-debug/CMakeFiles/Assignment3.dir/lab3_binary_search_tree.cpp.o"
+  "/Users/joshuawilkinson/Desktop/Data-Structures-Algorithms/lab3_priority_queue.cpp" "/Users/joshuawilkinson/Desktop/Data-Structures-Algorithms/cmake-build-debug/CMakeFiles/Assignment3.dir/lab3_priority_queue.cpp.o"
+  "/Users/joshuawilkinson/Desktop/Data-Structures-Algorithms/main.cpp" "/Users/joshuawilkinson/Desktop/Data-Structures-Algorithms/cmake-build-debug/CMakeFiles/Assignment3.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
