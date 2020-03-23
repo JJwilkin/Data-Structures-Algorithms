@@ -6,23 +6,31 @@
 
 #IncludeRegexTransform: 
 
-<<<<<<< HEAD
-/Users/joshuawilkinson/Desktop/Data-Structures-Algorithms/lab3_priority_queue.cpp
-lab3_priority_queue.hpp
-/Users/joshuawilkinson/Desktop/Data-Structures-Algorithms/lab3_priority_queue.hpp
-iostream
--
-
-/Users/joshuawilkinson/Desktop/Data-Structures-Algorithms/lab3_priority_queue.hpp
-=======
-/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_priority_queue.cpp
-lab3_priority_queue.hpp
-/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_priority_queue.hpp
-iostream
--
-
-/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_priority_queue.hpp
->>>>>>> 1816d50a1b785c1489f32e67a5be25184945cb44
+/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_binary_search_tree.hpp
 string
 -
+
+/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_priority_queue.hpp
+string
+-
+
+/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_tests.hpp
+algorithm
+-
+sstream
+-
+queue
+-
+lab3_priority_queue.hpp
+/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_priority_queue.hpp
+lab3_binary_search_tree.hpp
+/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_binary_search_tree.hpp
+
+/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/main.cpp
+iostream
+-
+string
+-
+lab3_tests.hpp
+/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_tests.hpp
 

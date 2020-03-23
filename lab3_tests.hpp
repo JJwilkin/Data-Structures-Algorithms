@@ -43,7 +43,7 @@ public:
 	}
   
 	// PURPOSE: Tests enqueue too many then dequeue too many
-	bool test4() {
+    bool test4() {
         PriorityQueue a(2);
         a.enqueue(PriorityQueue::TaskItem(2, "NULL"));
         a.enqueue(PriorityQueue::TaskItem(3, "NULL"));
@@ -52,7 +52,7 @@ public:
         a.dequeue();
         ASSERT_FALSE(a.dequeue());
         return true;
-	}
+    }
 };
 
 class BinarySearchTreeTest {

@@ -97,21 +97,19 @@ bool PriorityQueue::dequeue() {
 		TaskItem * temp = heap[1]; // Store first element
 		heap[1] = heap[i];
 		heap[i] = temp;
-		//delete heap[i];
-		//heap[i] = nullptr;
 		int j = 1;
-		while (j < size && (2*j+1) < size && (heap[j] -> priority < heap[2*j] -> priority || heap[j] -> priority < heap[2*j +1] -> priority)) {
-			TaskItem * swap = heap[j];
-			if (heap[2*j] -> priority > heap[2*j + 1] -> priority) { //if left node > right node swap left nope
+        while (j < size && (2*j+1) < size && (heap[j] -> priority < heap[2*j] -> priority || heap[j] -> priority < heap[2*j +1] -> priority)) {
+            TaskItem * swap = heap[j];
+            if (heap[2*j] -> priority > heap[2*j + 1] -> priority) { //if left node > right node swap left nope
 
-				heap[j] = heap[2*j];
-				heap [2*j] = swap;
-			}
-			else {
-				heap[j] = heap[2*j +1];
-				heap [2*j +1] = swap;
-			}
-		}
+                heap[j] = heap[2*j];
+                heap [2*j] = swap;
+            }
+            else {
+                heap[j] = heap[2*j +1];
+                heap [2*j +1] = swap;
+            }
+        }
 	}
 	size--;
 	return true;
