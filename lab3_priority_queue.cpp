@@ -103,7 +103,7 @@ bool PriorityQueue::dequeue() {
 		while (j < size && (2*j+1) < size && (heap[j] -> priority < heap[2*j] -> priority || heap[j] -> priority < heap[2*j +1] -> priority)) {
 			TaskItem * swap = heap[j];
 			if (heap[2*j] -> priority > heap[2*j + 1] -> priority) { //if left node > right node swap left nope
-				
+
 				heap[j] = heap[2*j];
 				heap [2*j] = swap;
 			}

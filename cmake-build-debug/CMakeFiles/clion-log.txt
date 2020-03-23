@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/joshuawilkinson/Desktop/Data-Structures-Algorithms
 -- The C compiler identification is AppleClang 11.0.0.11000033
 -- The CXX compiler identification is AppleClang 11.0.0.11000033
@@ -13,6 +14,9 @@
 -- Detecting CXX compiler ABI info - done
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
+=======
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/hooman/Documents/GitHub/Data-Structures-Algorithms
+>>>>>>> 1816d50a1b785c1489f32e67a5be25184945cb44
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /Users/joshuawilkinson/Desktop/Data-Structures-Algorithms/cmake-build-debug

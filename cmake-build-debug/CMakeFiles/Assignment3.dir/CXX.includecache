@@ -6,6 +6,7 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 /Users/joshuawilkinson/Desktop/Data-Structures-Algorithms/lab3_priority_queue.cpp
 lab3_priority_queue.hpp
 /Users/joshuawilkinson/Desktop/Data-Structures-Algorithms/lab3_priority_queue.hpp
@@ -13,6 +14,15 @@ iostream
 -
 
 /Users/joshuawilkinson/Desktop/Data-Structures-Algorithms/lab3_priority_queue.hpp
+=======
+/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_priority_queue.cpp
+lab3_priority_queue.hpp
+/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_priority_queue.hpp
+iostream
+-
+
+/Users/hooman/Documents/GitHub/Data-Structures-Algorithms/lab3_priority_queue.hpp
+>>>>>>> 1816d50a1b785c1489f32e67a5be25184945cb44
 string
 -
 
