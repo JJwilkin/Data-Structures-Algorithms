@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/hooman/CLionProjects/Assignment3/lab3_binary_search_tree.hpp
+string
+-
+
+/Users/hooman/CLionProjects/Assignment3/lab3_main.cpp
+
+/Users/hooman/CLionProjects/Assignment3/lab3_priority_queue.hpp
+string
+-
+
+/Users/hooman/CLionProjects/Assignment3/lab3_tests.hpp
+algorithm
+-
+sstream
+-
+queue
+-
+lab3_priority_queue.hpp
+/Users/hooman/CLionProjects/Assignment3/lab3_priority_queue.hpp
+lab3_binary_search_tree.hpp
+/Users/hooman/CLionProjects/Assignment3/lab3_binary_search_tree.hpp
+
+/Users/hooman/CLionProjects/Assignment3/main.cpp
+iostream
+-
+string
+-
+lab3_tests.hpp
+/Users/hooman/CLionProjects/Assignment3/lab3_tests.hpp
+
