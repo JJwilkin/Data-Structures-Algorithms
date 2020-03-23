@@ -26,8 +26,6 @@ public:
 	bool test2() {
         PriorityQueue q(5);
         q.enqueue(PriorityQueue::TaskItem(2, "NULL"));
-        ASSERT_TRUE( !q.empty() );
-        ASSERT_TRUE( !q.full() );
         ASSERT_TRUE( q.get_size() == 1 );
         q.dequeue();
         return true;
@@ -35,7 +33,11 @@ public:
 
 	// PURPOSE: Tests enqueue too many
 	bool test3() {
-		return false;
+        PriorityQueue q(2);
+        q.enqueue(PriorityQueue::TaskItem(2, "NULL"));
+        q.enqueue(PriorityQueue::TaskItem(3, "NULL"));
+        ASSERT_FALSE(q.enqueue(PriorityQueue::TaskItem(4, "NULL")));
+        return true;
 	}
   
 	// PURPOSE: Tests enqueue too many then dequeue too many
