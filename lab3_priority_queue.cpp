@@ -1,4 +1,5 @@
 #include "lab3_priority_queue.hpp"
+#include <iostream>;
 
 using namespace std;
 
@@ -56,7 +57,7 @@ PriorityQueue::TaskItem PriorityQueue::max() const {
                 max_element = i;
             }
         }
-        return &heap[max_element];
+        return *heap[max_element];
     }
 }
 
