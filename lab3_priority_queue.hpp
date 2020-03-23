@@ -10,8 +10,7 @@ protected:
 	struct TaskItem {
 		int priority; // normal values are greater than zero
 		string description; // task description
-		TaskItem(int new_priority, string new_desc) : 
-			priority(new_priority), description(new_desc) {}
+		TaskItem(int new_priority, string new_desc) : priority(new_priority), description(new_desc) {}
 		bool operator==(const TaskItem& rhs) {
 			bool are_equal = priority == rhs.priority;
 			return are_equal && description == rhs.description;

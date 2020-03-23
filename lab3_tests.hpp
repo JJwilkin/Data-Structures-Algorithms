@@ -35,9 +35,15 @@ public:
 
 	// PURPOSE: Tests enqueue too many
 	bool test3() {
-        PriorityQueue s(2);
-        s.enqueue(PriorityQueue::TaskItem(2, "NULL"));
-        s.enqueue(PriorityQueue::TaskItem(3, "NULL"));
+        PriorityQueue s(4);
+        s.enqueue(PriorityQueue::TaskItem(2, "Item Two"));
+        s.enqueue(PriorityQueue::TaskItem(3, "Item Three"));
+        s.enqueue(PriorityQueue::TaskItem(7, "Item 7"));
+        s.enqueue(PriorityQueue::TaskItem(6, "Item 6"));
+        s.print();
+        cout << "Max value is: " << s.max().priority << endl;
+        ASSERT_TRUE(s.full());
+        ASSERT_TRUE(s.get_size() == 4);
         ASSERT_FALSE(s.enqueue(PriorityQueue::TaskItem(4, "NULL")));
         return true;
 	}
@@ -45,9 +51,11 @@ public:
 	// PURPOSE: Tests enqueue too many then dequeue too many
 	bool test4() {
         PriorityQueue a(2);
-        a.enqueue(PriorityQueue::TaskItem(2, "NULL"));
-        a.enqueue(PriorityQueue::TaskItem(3, "NULL"));
+        a.enqueue(PriorityQueue::TaskItem(2, "Item Two"));
+        a.enqueue(PriorityQueue::TaskItem(3, "Item Three"));
         ASSERT_FALSE(a.enqueue(PriorityQueue::TaskItem(4, "NULL")));
+        ASSERT_TRUE( a.get_size() == 2 );
+        a.print();
         a.dequeue();
         a.dequeue();
         ASSERT_FALSE(a.dequeue());

@@ -23,7 +23,7 @@ PriorityQueue::~PriorityQueue() {
 
 // PURPOSE: Returns the number of elements in the priority queue
 unsigned int PriorityQueue::get_size() const {
-	return size;
+	return size ;
 }
 
 // PURPOSE: Returns true if the priority queue is empty; false, otherwise
@@ -38,10 +38,9 @@ bool PriorityQueue::full() const {
 
 // PURPOSE: Prints the contents of the priority queue; format not specified
 void PriorityQueue::print() const {
-    for (int i = 0; i < size; i++) {
-        auto task = heap[i];
-        cout << "ITEM " << i << ": Task Priority is: " << task->priority
-                             << ". Item Description is: " << task->description << endl;
+    for (int i = 1; i <= size; i++) {
+        cout << "ITEM " << i << ": Task Priority is: " << heap[i]->priority
+                             << ". Item Description is: " << heap[i]->description << endl;
     }
 }
 
@@ -52,10 +51,9 @@ PriorityQueue::TaskItem PriorityQueue::max() const {
     else {
         int max = 0;
         int max_element = 0;
-        for (int i = 0; i < size; i++) {
-            auto task = heap[i];
-            if (task->priority > max) {
-                max = task->priority;
+        for (int i = 1; i <= size; i++) {
+            if (heap[i]->priority > max) {
+                max = heap[i]->priority;
                 max_element = i;
             }
         }
@@ -70,7 +68,8 @@ PriorityQueue::TaskItem PriorityQueue::max() const {
 bool PriorityQueue::enqueue( TaskItem val ) {
 	if (size == capacity) return false;
 
-	if (size == 0) heap[1] =  new TaskItem(val.priority, val.description);
+	if (size == 0) heap[1] = new TaskItem(val.priority, val.description);
+
 	else {
 		int i = size + 1;
         heap[i] = new TaskItem(val.priority, val.description);
@@ -81,7 +80,8 @@ bool PriorityQueue::enqueue( TaskItem val ) {
 			heap[i/2] = temp;
 			i /= 2;
 		}
-	}
+
+    }
 	size++;
 	return true;
 }
