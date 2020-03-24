@@ -30,6 +30,14 @@ protected:
 	// number of nodes in the tree
 	unsigned int size;
 
+    void DestroyTree(TaskItem * n ) const;
+
+    int recursive_get_size (TaskItem * n ) const;
+
+    void traverse (TaskItem * n) const;
+
+    int max_height (TaskItem * n) const;
+
 public:
 	// CONSTRUCTOR AND DESTRUCTOR
 

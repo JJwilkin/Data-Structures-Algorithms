@@ -2,47 +2,119 @@
 #include "lab3_binary_search_tree.hpp"
 
 using namespace std;
-
+//=============================== CONSTRUCTOR ==============================
 // PURPOSE: Default/empty constructor
 BinarySearchTree::BinarySearchTree() {
+    root = nullptr;
+    size = 0;
 }
 
+// ============================== DECONSTRUCTOR ================================
 // PURPOSE: Explicit destructor of the class BinarySearchTree
 BinarySearchTree::~BinarySearchTree() {
+    DestroyTree(root); //helper function which actually deletes nodes recursively
 }
 
+void BinarySearchTree::DestroyTree( BinarySearchTree::TaskItem* n ) const {
+    if (n) {
+        DestroyTree(n -> left);
+        DestroyTree(n -> right);
+        delete n;
+    }
+}
+//======================SIZE===============================
 // PURPOSE: Returns the number of nodes in the tree
 unsigned int BinarySearchTree::get_size() const {
-	return 0;
+	return recursive_get_size(root);
 }
 
+int BinarySearchTree::recursive_get_size (TaskItem * n ) const {
+    if (n == NULL) {
+        return 0;
+    }
+    else {
+        return (recursive_get_size(n ->left) + 1 + recursive_get_size(n -> right));
+    }
+}
+//==========================MAX VALUE=================================
 // PURPOSE: Returns the maximum value of a node in the tree
 // if the tree is empty, it returns (-1, "N/A")
 BinarySearchTree::TaskItem BinarySearchTree::max() const {
-	return BinarySearchTree::TaskItem(-1, "N/A");
+    if (size == 0) return BinarySearchTree::TaskItem(-1, "N/A");
+    TaskItem * temp = root;
+    while (temp -> right) { //navigate to the right most element
+        temp = temp -> right;
+    }
+    return BinarySearchTree::TaskItem(temp->priority, temp->description);
 }
 
+//==========================MIN VALUE=======================================
 // PURPOSE: Returns the minimum value of a node in the tree
 // if the tree is empty, it returns (-1, "N/A")
 BinarySearchTree::TaskItem BinarySearchTree::min() const {
-	return BinarySearchTree::TaskItem(-1, "N/A");
+    if (size == 0) return BinarySearchTree::TaskItem(-1, "N/A");
+    TaskItem * temp = root;
+    while (temp -> left) { //navigate to the left most element
+        temp = temp -> left;
+    }
+    return BinarySearchTree::TaskItem(temp->priority, temp->description);
 }
 
+//=========================TREE HEIGHT ======================================
 // PURPOSE: Returns the tree height
 unsigned int BinarySearchTree::height() const {
-	return 0;
+	return max_height(root);
 }
 
+int BinarySearchTree::max_height(BinarySearchTree::TaskItem *n) const {
+    if (n == NULL) return 0;
+    else {
+        int left_depth = max_height(n -> left);
+        int right_depth = max_height(n -> right);
+
+        if (left_depth > right_depth) return (left_depth + 1);
+        else return (right_depth + 1);
+    }
+}
+
+//========================== PRINT ======================================
 // PURPOSE: Prints the contents of the tree; format not specified
 void BinarySearchTree::print() const {
+    cout << "PRINTING TREE w/ InOrder Traversal";
+    traverse(root);
 }
 
+void BinarySearchTree::traverse(BinarySearchTree::TaskItem *n) const {
+    if (n) {
+        traverse(n -> left);
+        traverse(n -> right);
+        cout << "PRIORITY: " << n ->priority << ", DESCRIPTION: " << n->description << endl;
+    }
+}
+
+//=================================SEARCH FOR VALUE =======================================
 // PURPOSE: Returns true if a node with the value val exists in the tree	
 // otherwise, returns false
 bool BinarySearchTree::exists( BinarySearchTree::TaskItem val ) const {
+    TaskItem * temp = root;
+    while (temp) { //run until reach end of loop
+       if(val.priority < temp->priority) { //if priority is less than current node, go down left tree
+           temp = temp ->left;
+       }
+       else if (val.priority > temp -> priority) {
+           temp = temp -> right;
+       }
+       else if (val == *temp) { //if priority is same, check if there is a match
+           return true;
+       }
+       else { //if priority is same, and description don't match, there are no matches, return false
+           return false;
+       }
+    }
 	return false;
 }
 
+//================================= OPTIONAL HELPER FUNCTIONS =========================
 // PURPOSE: Optional helper function that returns a pointer to the root node
 BinarySearchTree::TaskItem* BinarySearchTree::get_root_node() {
     return NULL;
@@ -53,17 +125,47 @@ BinarySearchTree::TaskItem** BinarySearchTree::get_root_node_address() {
     return NULL;
 }
 
+
 // PURPOSE: Optional helper function that gets the maximum depth for a given node
 int BinarySearchTree::get_node_depth( BinarySearchTree::TaskItem* n ) const {
-	return 0;
+return 0;
 }
 
+
+//================================ INSERT ===============================================
 // PURPOSE: Inserts the value val into the tree if it is unique
 // returns true if successful; returns false if val already exists
 bool BinarySearchTree::insert( BinarySearchTree::TaskItem val ) {
-    return false;
+    if(size == 0) root = new TaskItem (val.priority, val.description);
+    else {
+        TaskItem * temp = root;
+        while (temp) {
+            if (val.priority < temp->priority) {
+                if (!temp -> left) { //if there is no left child, set val as left child
+                    temp -> left = new TaskItem (val.priority, val.description);
+                }
+                else { //if left child exist, set temp to left child and proceed to compare
+                    temp = temp -> left;
+                }
+            }
+            else if (val.priority > temp -> priority){
+                if (!temp -> right) { //if there is no right child, set val as right child
+                    temp -> right = new TaskItem (val.priority, val.description);
+                }
+                else { //if right child exist, set temp to right child and proceed to compare
+                    temp = temp -> right;
+                }
+            }
+            else { //reject duplicate priority
+                return false;
+            }
+        }
+    }
+    size++;
+    return true;
 }
 
+//====================================== REMOVE ===============================================
 // PURPOSE: Removes the node with the value val from the tree
 // returns true if successful; returns false otherwise
 bool BinarySearchTree::remove( BinarySearchTree::TaskItem val ) {
