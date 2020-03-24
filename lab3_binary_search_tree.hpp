@@ -38,6 +38,12 @@ protected:
 
     int max_height (TaskItem * n) const;
 
+    TaskItem * find_val (TaskItem n ) const;
+
+    TaskItem * find_parent (TaskItem n ) const;
+
+    TaskItem * find_minimum (TaskItem * n) const;
+
 public:
 	// CONSTRUCTOR AND DESTRUCTOR
 

@@ -60,6 +60,15 @@ BinarySearchTree::TaskItem BinarySearchTree::min() const {
     return BinarySearchTree::TaskItem(temp->priority, temp->description);
 }
 
+BinarySearchTree::TaskItem * BinarySearchTree::find_minimum(BinarySearchTree::TaskItem *n) const {
+    if (size == 0) return NULL;
+    TaskItem * temp = n;
+    while (temp -> left) {
+        temp = temp -> left;
+    }
+    return temp;
+}
+
 //=========================TREE HEIGHT ======================================
 // PURPOSE: Returns the tree height
 unsigned int BinarySearchTree::height() const {
@@ -96,23 +105,50 @@ void BinarySearchTree::traverse(BinarySearchTree::TaskItem *n) const {
 // PURPOSE: Returns true if a node with the value val exists in the tree	
 // otherwise, returns false
 bool BinarySearchTree::exists( BinarySearchTree::TaskItem val ) const {
-    TaskItem * temp = root;
-    while (temp) { //run until reach end of loop
-       if(val.priority < temp->priority) { //if priority is less than current node, go down left tree
-           temp = temp ->left;
-       }
-       else if (val.priority > temp -> priority) {
-           temp = temp -> right;
-       }
-       else if (val == *temp) { //if priority is same, check if there is a match
-           return true;
-       }
-       else { //if priority is same, and description don't match, there are no matches, return false
-           return false;
-       }
-    }
+    if (find_val(val)) return true;
 	return false;
 }
+
+BinarySearchTree::TaskItem * BinarySearchTree::find_val(BinarySearchTree::TaskItem val) const {
+    TaskItem * temp = root;
+    while (temp) { //run until reach end of loop
+        if(val.priority < temp->priority) { //if priority is less than current node, go down left tree
+            temp = temp ->left;
+        }
+        else if (val.priority > temp -> priority) {
+            temp = temp -> right;
+        }
+        else if (val == *temp) { //if priority is same, check if there is a match
+            return temp;
+        }
+        else { //if priority is same, and description don't match, there are no matches, return false
+            return NULL;
+        }
+    }
+    return NULL;
+}
+
+BinarySearchTree::TaskItem * BinarySearchTree::find_parent(BinarySearchTree::TaskItem val) const {
+    TaskItem * temp = root;
+    if (val == *temp) return NULL; //special case, return root node if val is root
+    while (temp) { //run until reach end of loop
+        if (*temp -> left == val || *temp->right == val) { //if parent of desired value
+            return temp;
+        }
+        if(val.priority < temp->priority) { //if priority is less than current node, go down left tree
+            temp = temp ->left;
+        }
+        else if (val.priority > temp -> priority) {
+            temp = temp -> right;
+        }
+
+        else { //if val is not in tree
+            return NULL;
+        }
+    }
+    return NULL;
+}
+
 
 //================================= OPTIONAL HELPER FUNCTIONS =========================
 // PURPOSE: Optional helper function that returns a pointer to the root node
@@ -169,5 +205,62 @@ bool BinarySearchTree::insert( BinarySearchTree::TaskItem val ) {
 // PURPOSE: Removes the node with the value val from the tree
 // returns true if successful; returns false otherwise
 bool BinarySearchTree::remove( BinarySearchTree::TaskItem val ) {
-    return false;
+    if (size == 0) return false;
+    TaskItem * target = find_val(val);
+    if(target == NULL) return false;
+    TaskItem * parent = find_parent(val);
+    TaskItem * temp = root;
+    //If val is leaf node
+    //======================LEAF NODE=========================
+    if (target -> left == NULL && target ->right == NULL) {
+        //Check if target is left/right child of parent, then set to null
+        if(parent) { //if only one node in the tree parent = NULL
+            if (parent -> left == target) parent -> left = nullptr;
+            else parent -> right = nullptr;
+        }
+
+        size--;
+        delete target;
+        return true;
+    }
+    //=======================ONE CHILD======================
+    // If node to be deleted has only one child
+    if (target -> left == NULL) { //if target has right child
+        //if target is left child of parent, set new left child as target's child
+        if (parent) {
+            if (parent -> left == target) parent -> left = target -> right;
+            else parent -> right = parent ->right = target -> right;
+        }
+        else {
+            root = target -> right;
+        }
+
+
+        size--;
+        delete target;
+        return true;
+    }
+    else if (target -> right == NULL){
+        if(parent) {
+            if (parent -> left == target) parent -> left = target -> left;
+            else parent -> right = parent ->right = target -> left;
+        }
+        else {
+            root = target -> left;
+        }
+        size--;
+        delete target;
+        return true;
+    }
+    //========================TWO CHILDREN=======================
+    else { //If node to be delete has TWO CHILDREN
+        TaskItem * minimum = find_minimum(target->right);
+        TaskItem * minimum_parent = find_minimum(minimum);
+
+    }
+
+
+
+    size--;
+    return true;
 }
