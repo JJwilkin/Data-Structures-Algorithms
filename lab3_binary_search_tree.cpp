@@ -209,7 +209,7 @@ bool BinarySearchTree::remove( BinarySearchTree::TaskItem val ) {
     TaskItem * target = find_val(val);
     if(target == NULL) return false;
     TaskItem * parent = find_parent(val);
-    TaskItem * temp = root;
+    TaskItem * temp ;
     //If val is leaf node
     //======================LEAF NODE=========================
     if (target -> left == NULL && target ->right == NULL) {
@@ -231,36 +231,53 @@ bool BinarySearchTree::remove( BinarySearchTree::TaskItem val ) {
             if (parent -> left == target) parent -> left = target -> right;
             else parent -> right = parent ->right = target -> right;
         }
-        else {
+        else {//if root node
             root = target -> right;
         }
-
-
-        size--;
-        delete target;
-        return true;
     }
+
     else if (target -> right == NULL){
         if(parent) {
             if (parent -> left == target) parent -> left = target -> left;
             else parent -> right = parent ->right = target -> left;
         }
-        else {
+        else { //if root node
             root = target -> left;
         }
-        size--;
-        delete target;
-        return true;
     }
     //========================TWO CHILDREN=======================
     else { //If node to be delete has TWO CHILDREN
         TaskItem * minimum = find_minimum(target->right);
-        TaskItem * minimum_parent = find_minimum(minimum);
+        TaskItem * minimum_parent = find_parent(*minimum);
+
+        if (parent) { //if not root node
+            if (parent->left == target) parent->left = minimum;
+            else parent->right = minimum;
+
+        }
+        else { //if it is root node
+            if(minimum = target ->right) {
+                root = minimum;
+                root ->right = minimum ->right;
+            }
+        }
+
+            if(!(minimum = target -> right)) {
+                if (minimum -> right) minimum_parent ->left = minimum ->right;
+                else minimum_parent -> left = nullptr;
+
+                minimum ->left = target -> left;
+                minimum -> right = target -> right;
+            }
+
+
+
 
     }
 
 
 
     size--;
+    delete target;
     return true;
 }
