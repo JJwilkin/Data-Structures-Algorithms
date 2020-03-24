@@ -13,12 +13,12 @@ PriorityQueue::PriorityQueue(unsigned int n_capacity) {
 
 // PURPOSE: Explicit destructor of the class PriorityQueue
 PriorityQueue::~PriorityQueue() {
-    for (int i = 0; i < size; i++) {
-        if (heap[i]) {
-            delete heap[i];
-            heap[i] = nullptr;
-        }
-    }
+//    for (int i = 0; i < size; i++) {
+//        if (heap[i]) {
+            delete heap;
+            heap = nullptr;
+//        }
+//    }
 }
 
 // PURPOSE: Returns the number of elements in the priority queue

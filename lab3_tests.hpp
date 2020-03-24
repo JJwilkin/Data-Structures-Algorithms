@@ -118,12 +118,23 @@ public:
 
 	// PURPOSE: Tests a tree with one node
 	bool test2() {
-		return false;
+        BinarySearchTree bst;
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(2,"test") ));
+        ASSERT_TRUE(bst.size == 1 && bst.get_size() ==1);
+        ASSERT_TRUE(*bst.root == BinarySearchTree::TaskItem(2,"test"));
+		return true;
 	}
 
 	// PURPOSE: Tests insert, remove, and size on linear list formation with three elements
 	bool test3() {
-		return false;
+        BinarySearchTree bst;
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(2,"test")));
+
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(3,"test3")));
+        bst.print();
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(4,"test4")));
+
+        return true;
 	}
 
 	// PURPOSE: Tests removal of a node with one child

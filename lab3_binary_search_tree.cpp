@@ -89,7 +89,7 @@ int BinarySearchTree::max_height(BinarySearchTree::TaskItem *n) const {
 //========================== PRINT ======================================
 // PURPOSE: Prints the contents of the tree; format not specified
 void BinarySearchTree::print() const {
-    cout << "PRINTING TREE w/ InOrder Traversal";
+    cout << "PRINTING TREE w/ InOrder Traversal" <<endl;
     traverse(root);
 }
 
@@ -186,7 +186,7 @@ bool BinarySearchTree::insert( BinarySearchTree::TaskItem val ) {
             }
             else if (val.priority > temp -> priority){
                 if (!temp -> right) { //if there is no right child, set val as right child
-                    temp -> right = new TaskItem (val.priority, val.description);
+                    temp->right = new TaskItem (val.priority, val.description);
                 }
                 else { //if right child exist, set temp to right child and proceed to compare
                     temp = temp -> right;
@@ -255,7 +255,7 @@ bool BinarySearchTree::remove( BinarySearchTree::TaskItem val ) {
             else parent->right = minimum;
 
         }
-        else { //if it is root node
+        else { //if minimum is target -> right
             if(minimum = target ->right) {
                 root = minimum;
                 root ->right = minimum ->right;
