@@ -128,38 +128,140 @@ public:
 	// PURPOSE: Tests insert, remove, and size on linear list formation with three elements
 	bool test3() {
         BinarySearchTree bst;
-        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(2,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(3,"test")));
 
-        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(3,"test3")));
-        bst.print();
-        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(4,"test4")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(2,"test2")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(1,"test1")));
+        ASSERT_TRUE(bst.size == 3 && bst.get_size() ==3);
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(2,"test2")));
+        ASSERT_TRUE(bst.size == 2 && bst.get_size() ==2);
 
         return true;
 	}
 
 	// PURPOSE: Tests removal of a node with one child
 	bool test4() {
-		return false;
+        BinarySearchTree bst;
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(5,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(3,"test2")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(8,"test1")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(4,"test1")));
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(3,"test2")));
+
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(2,"test1")));
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(4,"test1")));
+
+        return true;
 	}
 
 	// PURPOSE: Tests insert of multiple elements and remove till nothing remains
 	bool test5() {
-		return false;
+        BinarySearchTree bst;
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(40,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(20,"test2")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(60,"test1")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(50,"test1")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(55,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(65,"test2")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(70,"test1")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(67,"test1")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(75,"test1")));
+
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(67,"test1")));
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(65,"test2")));
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(70,"test1")));
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(75,"test1")));
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(40,"test")));
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(50,"test1")));
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(60,"test1")));
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(55,"test")));
+        ASSERT_TRUE(*bst.root == BinarySearchTree::TaskItem(20,"test2"));
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(20,"test2")));
+
+        return true;
 	}
  
 	// PURPOSE: Tests removal of root node when both children of root have two children
 	bool test6() {
-		return false;
+        BinarySearchTree bst;
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(20,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(10,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(30,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(5,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(15,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(25,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(35,"test")));
+
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(20,"test")));
+        ASSERT_TRUE(*bst.root == BinarySearchTree::TaskItem(25,"test"));
+        return true;
 	}
 
 	// PURPOSE: Tests depth with many inserts and some removes
 	bool test7() {
-		return false;
+        BinarySearchTree bst;
+        ASSERT_TRUE(bst.height() == 0);
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(20,"test")));
+        ASSERT_TRUE(bst.height() == 1);
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(10,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(30,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(5,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(15,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(25,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(35,"test")));
+        ASSERT_TRUE(bst.height() == 3);
+
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(11,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(12,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(14,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(13,"test")));
+        ASSERT_TRUE(bst.height() == 7);
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(11,"test")));
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(14,"test")));
+        ASSERT_TRUE(bst.height() == 5);
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(27,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(26,"test")));
+        ASSERT_TRUE(bst.height() == 5);
+
+        return true;
 	}
 
 	// PURPOSE: Tests lots of inserts and removes
 	bool test8() {
-		return false;
+        BinarySearchTree bst;
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(50,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(20,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(80,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(1,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(16,"test")));
+
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(20,"test")));
+
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(30,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(17,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(37,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(55,"test")));
+
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(16,"test")));
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(37,"test")));
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(80,"test")));
+
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(90,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(80,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(99,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(86,"test")));
+        ASSERT_FALSE(bst.insert(BinarySearchTree::TaskItem(90,"test")));
+        ASSERT_FALSE(bst.insert(BinarySearchTree::TaskItem(1,"test")));
+        ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(19,"test")));
+
+        ASSERT_TRUE(bst.min().priority == 1);
+        ASSERT_TRUE(bst.max().priority == 99);
+        ASSERT_FALSE(bst.remove(BinarySearchTree::TaskItem(14,"test")));
+        ASSERT_FALSE(bst.remove(BinarySearchTree::TaskItem(50,"test2")));
+        ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(50,"test")));
+        ASSERT_TRUE(bst.root->priority == 55);
+        ASSERT_TRUE(bst.height() == 5);
+		return true;
 	}
 };
 #endif

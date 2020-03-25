@@ -96,8 +96,9 @@ void BinarySearchTree::print() const {
 void BinarySearchTree::traverse(BinarySearchTree::TaskItem *n) const {
     if (n) {
         traverse(n -> left);
-        traverse(n -> right);
         cout << "PRIORITY: " << n ->priority << ", DESCRIPTION: " << n->description << endl;
+        traverse(n -> right);
+
     }
 }
 
@@ -132,7 +133,7 @@ BinarySearchTree::TaskItem * BinarySearchTree::find_parent(BinarySearchTree::Tas
     TaskItem * temp = root;
     if (val == *temp) return NULL; //special case, return root node if val is root
     while (temp) { //run until reach end of loop
-        if (*temp -> left == val || *temp->right == val) { //if parent of desired value
+        if ((temp->left && *temp -> left == val) || (temp->right && *temp->right == val)) { //if parent of desired value
             return temp;
         }
         if(val.priority < temp->priority) { //if priority is less than current node, go down left tree
@@ -179,6 +180,8 @@ bool BinarySearchTree::insert( BinarySearchTree::TaskItem val ) {
             if (val.priority < temp->priority) {
                 if (!temp -> left) { //if there is no left child, set val as left child
                     temp -> left = new TaskItem (val.priority, val.description);
+                    size++;
+                    return true;
                 }
                 else { //if left child exist, set temp to left child and proceed to compare
                     temp = temp -> left;
@@ -187,6 +190,8 @@ bool BinarySearchTree::insert( BinarySearchTree::TaskItem val ) {
             else if (val.priority > temp -> priority){
                 if (!temp -> right) { //if there is no right child, set val as right child
                     temp->right = new TaskItem (val.priority, val.description);
+                    size++;
+                    return true;
                 }
                 else { //if right child exist, set temp to right child and proceed to compare
                     temp = temp -> right;
@@ -217,6 +222,9 @@ bool BinarySearchTree::remove( BinarySearchTree::TaskItem val ) {
         if(parent) { //if only one node in the tree parent = NULL
             if (parent -> left == target) parent -> left = nullptr;
             else parent -> right = nullptr;
+        }
+        else { //if root
+            root = nullptr;
         }
 
         size--;
@@ -254,21 +262,36 @@ bool BinarySearchTree::remove( BinarySearchTree::TaskItem val ) {
             if (parent->left == target) parent->left = minimum;
             else parent->right = minimum;
 
-        }
-        else { //if minimum is target -> right
-            if(minimum = target ->right) {
-                root = minimum;
-                root ->right = minimum ->right;
-            }
-        }
+            if((minimum == target -> right)) {
+                 minimum ->left = target ->left;
 
-            if(!(minimum = target -> right)) {
+            }
+            else {
                 if (minimum -> right) minimum_parent ->left = minimum ->right;
                 else minimum_parent -> left = nullptr;
 
                 minimum ->left = target -> left;
                 minimum -> right = target -> right;
             }
+
+        }
+        else { //if root
+            if(minimum == target ->right) {
+                minimum ->left = root -> left;
+                root = minimum;
+            }
+            else {
+                if (minimum -> right) minimum_parent ->left = minimum ->right;
+                else minimum_parent -> left = nullptr;
+
+                minimum ->left = root -> left;
+                minimum -> right = root -> right;
+                root = minimum;
+
+            }
+        }
+
+
 
 
 
