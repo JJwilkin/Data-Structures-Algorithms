@@ -5,3 +5,4 @@ Data structures and Algorithm projects
 
 ## Lab 3 
 Priority Queue structured using a max heap/ Binary Search Tree implementation
+* Implement remove algorithm for binary search tree
