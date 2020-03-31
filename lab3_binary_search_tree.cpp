@@ -76,7 +76,7 @@ unsigned int BinarySearchTree::height() const {
 }
 
 int BinarySearchTree::max_height(BinarySearchTree::TaskItem *n) const {
-    if (n == NULL) return 0;
+    if (n == NULL) return -1;
     else {
         int left_depth = max_height(n -> left);
         int right_depth = max_height(n -> right);
@@ -84,6 +84,7 @@ int BinarySearchTree::max_height(BinarySearchTree::TaskItem *n) const {
         if (left_depth > right_depth) return (left_depth + 1);
         else return (right_depth + 1);
     }
+
 }
 
 //========================== PRINT ======================================

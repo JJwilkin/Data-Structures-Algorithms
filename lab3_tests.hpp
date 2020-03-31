@@ -200,28 +200,28 @@ public:
 	// PURPOSE: Tests depth with many inserts and some removes
 	bool test7() {
         BinarySearchTree bst;
-        ASSERT_TRUE(bst.height() == 0);
+        ASSERT_TRUE(bst.height() == -1);
         ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(20,"test")));
-        ASSERT_TRUE(bst.height() == 1);
+        ASSERT_TRUE(bst.height() == 0);
         ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(10,"test")));
         ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(30,"test")));
         ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(5,"test")));
         ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(15,"test")));
         ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(25,"test")));
         ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(35,"test")));
-        ASSERT_TRUE(bst.height() == 3);
+        ASSERT_TRUE(bst.height() == 2);
 
         ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(11,"test")));
         ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(12,"test")));
         ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(14,"test")));
         ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(13,"test")));
-        ASSERT_TRUE(bst.height() == 7);
+        ASSERT_TRUE(bst.height() == 6);
         ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(11,"test")));
         ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(14,"test")));
-        ASSERT_TRUE(bst.height() == 5);
+        ASSERT_TRUE(bst.height() == 4);
         ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(27,"test")));
         ASSERT_TRUE(bst.insert(BinarySearchTree::TaskItem(26,"test")));
-        ASSERT_TRUE(bst.height() == 5);
+        ASSERT_TRUE(bst.height() == 4);
 
         return true;
 	}
@@ -260,7 +260,7 @@ public:
         ASSERT_FALSE(bst.remove(BinarySearchTree::TaskItem(50,"test2")));
         ASSERT_TRUE(bst.remove(BinarySearchTree::TaskItem(50,"test")));
         ASSERT_TRUE(bst.root->priority == 55);
-        ASSERT_TRUE(bst.height() == 5);
+        ASSERT_TRUE(bst.height() == 4);
 		return true;
 	}
 };
