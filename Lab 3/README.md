@@ -8,3 +8,5 @@ Priority Queue structured using a max heap/ Binary Search Tree implementation
 Notable Algorithm Designs:
 * Implement remove node algorithm for binary search tree
 * implement enque/deque functionality for a max heap
+
+## Practice Activity #2
