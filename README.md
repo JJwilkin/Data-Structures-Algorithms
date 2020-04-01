@@ -10,3 +10,4 @@ Notable Algorithm Designs:
 * implement enque/deque functionality for a max heap
 
 ## Practice Activity #2
+Design  and  implement  a  recursive  function  named find_and_print_sum_of_nodesthat  finds  and  prints  all downwards paths in a given binary tree that sum up to a given value.The paths can start at any node, but do notspan both subtrees at that node. The tree is a general binary tree; it is not a heap, BST, or AVL tr
