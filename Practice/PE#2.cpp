@@ -58,6 +58,7 @@ void find_and_print_sum_of_nodes(BinaryTreeNode* T, int desired_sum, int cur_sum
 int find_max_sum_of_nodes (BinaryTreeNode* T, int &temp_max_sum) {
     // exit if T is NULL
     if (!T) return 0;
+    // cout << "Val " << T ->value << "  ";
     
     // derive the maximum sum for the left subtree
     int left_sum = find_max_sum_of_nodes(T->left, temp_max_sum);  
@@ -67,17 +68,17 @@ int find_max_sum_of_nodes (BinaryTreeNode* T, int &temp_max_sum) {
 
     // TODO: compare T->value, left_sum + T->value, and right_sum + T->value; store as max1
     int max1;
-    if (T->value > left_sum + T->value && T->value > right_sum + T->value) max1 = T->value;
-    else if (left_sum + T->value > T->value && left_sum + T->value > right_sum + T->value) max1 = left_sum + T->value;
+    if (T->value > left_sum + T->value || T->value > right_sum + T->value) max1 = T->value;
+    else if (left_sum + T->value > T->value || left_sum + T->value > right_sum + T->value) max1 = left_sum + T->value;
     else max1 = right_sum + T->value;
-
     // TODO: compare max1, left_sum + right_sum + T->value; store as max2
     int max2;
     if (max1 > left_sum + right_sum + T->value) max2 = max1;
     else max2 = left_sum + right_sum + T->value;
     
     // TODO: update temp_max_sum with the new max
-    temp_max_sum = max2;
+    if(max2 >temp_max_sum ) temp_max_sum = max2;
+// cout << "temp max sum: " << temp_max_sum << endl << endl ;
     
     // TODO: return max1
     return max1;
