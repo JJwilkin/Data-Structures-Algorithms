@@ -12,11 +12,11 @@ void find_and_print_sum_of_nodes (BinaryTreeNode* T, int desired_sum, int cur_su
     if (new_sum == desired_sum)
         cout << new_buffer << endl;
 
-    // TODO: continue down theleft subtree
+    // TODO: continue down the left subtree
 
-    // TODO: continue down theright subtree
+    // TODO: continue down the right subtree
 
-    // TODO: restart from the left subtreeif buffer = “”
+    // TODO: restart from the left sub tree if buffer = “”
 
-    // TODO: restart from the right subtreeif buffer = “”
+    // TODO: restart from the right sub tree if buffer = “”
 }
