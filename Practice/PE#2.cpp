@@ -68,8 +68,8 @@ int find_max_sum_of_nodes (BinaryTreeNode* T, int &temp_max_sum) {
 
     // TODO: compare T->value, left_sum + T->value, and right_sum + T->value; store as max1
     int max1;
-    if (T->value > left_sum + T->value || T->value > right_sum + T->value) max1 = T->value;
-    else if (left_sum + T->value > T->value || left_sum + T->value > right_sum + T->value) max1 = left_sum + T->value;
+    if (T->value >= left_sum + T->value && T->value >= right_sum + T->value) max1 = T->value;
+    else if (left_sum + T->value >= T->value && left_sum + T->value >= right_sum + T->value) max1 = left_sum + T->value;
     else max1 = right_sum + T->value;
     // TODO: compare max1, left_sum + right_sum + T->value; store as max2
     int max2;

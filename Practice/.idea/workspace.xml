@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c443eb59-67a0-4f9a-81cc-425078d99bd4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1a6PTPduhYKvT8XSdTr3R05IbmD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c443eb59-67a0-4f9a-81cc-425078d99bd4" name="Default Changelist" comment="" />
+      <created>1586053077976</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586053077976</updated>
+      <workItem from="1586053083114" duration="659000" />
+      <workItem from="1586053819415" duration="4337000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="304" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586054184934">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="304" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1586054184934" />
+    <state width="640" height="197" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1586053406584">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="640" height="197" key="ImportCMakeProjectWizard.bottomPanel/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1586053406584" />
+    <state width="640" height="461" key="ImportCMakeProjectWizard.topPanel" timestamp="1586053406583">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="640" height="461" key="ImportCMakeProjectWizard.topPanel/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1586053406583" />
+    <state x="494" y="371" key="com.intellij.ide.util.TipDialog" timestamp="1586053820463">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="494" y="371" key="com.intellij.ide.util.TipDialog/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1586053820463" />
+  </component>
+</project>
