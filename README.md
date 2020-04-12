@@ -11,3 +11,6 @@ Notable Algorithm Designs:
 
 ## Practice Activity #2
 Design  and  implement  a  recursive  function  named find_and_print_sum_of_nodesthat  finds  and  prints  all downwards paths in a given binary tree that sum up to a given value.The paths can start at any node, but do notspan both subtrees at that node. The tree is a general binary tree; it is not a heap, BST, or AVL tr
+
+## Graph Practice
+Implementations of Graphs using C++. Graph traversal using Dijkstra’s shortest path algorithm
