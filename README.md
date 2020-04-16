@@ -14,3 +14,6 @@ Design  and  implement  a  recursive  function  named find_and_print_sum_of_node
 
 ## Graph Practice
 Implementations of Graphs using C++. Graph traversal using Dijkstra’s shortest path algorithm
+
+## Final 
+Exercises using Binary Search trees and recursion from final
